@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <windows.h>
+
+long long factorial(int i)
+{
+    if (i==0 || i==1)
+    {
+        return 1;
+    }
+    else
+    {
+        return i * factorial(i-1);
+    }
+}
+int main()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    int n;
+    printf("Введіть натуральне число n:   ");
+    scanf("%d", &n);
+    double suma=0;
+    for(int i=1; i<=n; i++)
+    {
+        suma+=(double)factorial(i)/ (double)factorial(n+i);
+    }
+    printf("suma = %.10e", suma);
+}
